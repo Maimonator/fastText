@@ -523,5 +523,6 @@ PYBIND11_MODULE(fasttext_pybind, m) {
             return std::pair<std::vector<py::str>, std::vector<int32_t>>(
                 transformedSubwords, ngrams);
           })
-      .def("isQuant", [](fasttext::FastText& m) { return m.isQuant(); });
+      .def("isQuant", [](fasttext::FastText& m) { return m.isQuant(); })
+      .def("getLossValue", [](fasttext::FastText& m) {return m.getLossValue();});
 }

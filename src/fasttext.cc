@@ -768,6 +768,11 @@ void FastText::train(const Args& args, const TrainCallback& callback) {
   startThreads(callback);
 }
 
+real FastText::getLossValue() const
+{
+  return this->loss_;
+}
+
 void FastText::abort() {
   try {
     throw AbortError();
